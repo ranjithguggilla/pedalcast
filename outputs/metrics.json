@@ -1,0 +1,66 @@
+{
+  "dataset_rows": 17379,
+  "train_rows": 13903,
+  "test_rows": 3476,
+  "target": "count",
+  "mean_hourly_demand": 189.46,
+  "models": {
+    "NaiveMean": {
+      "rmse": 232.6084,
+      "mae": 174.9846,
+      "r2": -0.113,
+      "rmsle": 1.4334
+    },
+    "SeasonalNaive": {
+      "rmse": 144.9173,
+      "mae": 101.5501,
+      "r2": 0.568,
+      "rmsle": 0.593
+    },
+    "LinearOLS": {
+      "rmse": 166.4177,
+      "mae": 108.833,
+      "r2": 0.4303,
+      "rmsle": 0.7803
+    },
+    "Ridge": {
+      "rmse": 169.4385,
+      "mae": 110.9064,
+      "r2": 0.4094,
+      "rmsle": 0.7809
+    },
+    "RandomForest": {
+      "rmse": 97.0582,
+      "mae": 63.387,
+      "r2": 0.8062,
+      "rmsle": 0.4399
+    },
+    "LightGBM": {
+      "rmse": 66.8132,
+      "mae": 43.0167,
+      "r2": 0.9082,
+      "rmsle": 0.3659
+    }
+  },
+  "best_model": "LightGBM",
+  "ols_train_r2": 0.6984,
+  "top_features": [
+    "hour_cos",
+    "hour_sin",
+    "is_rush_hour",
+    "workingday",
+    "temp",
+    "humidity",
+    "is_weekend",
+    "atemp"
+  ],
+  "business_impact": {
+    "test_hours": 3476,
+    "seasonal_naive_mae": 101.55,
+    "best_model_mae": 43.02,
+    "mae_reduction_bikes_per_hour": 58.53,
+    "cumulative_error_bikes_avoided_test": 203462.0,
+    "value_per_bike_error_usd": 1.5,
+    "estimated_annual_value_usd": 769128.7
+  }
+}
